@@ -9,7 +9,7 @@ class AppTheme {
   static ThemeData light = ThemeData(
     brightness: Brightness.light,
     primaryColor: AppColor.primaryColor,
-    backgroundColor: AppColor.backgroundWhite,
+    colorScheme: const ColorScheme.light(),
     scaffoldBackgroundColor: AppColor.backgroundWhite,
     primarySwatch: AppColor.primarySwatch,
     textTheme: TextTheme(
@@ -33,9 +33,9 @@ class AppTheme {
 
   static ThemeData dark = ThemeData(
     brightness: Brightness.dark,
-    backgroundColor: AppColor.backgroundBlack,
     scaffoldBackgroundColor: AppColor.backgroundBlack,
     primaryColor: AppColor.primaryColor,
+    colorScheme: const ColorScheme.dark(),
     primarySwatch: AppColor.primarySwatch,
     textTheme: TextTheme(
       displayLarge: _textStyle.displayLarge.copyWith(color: AppColor.white),
