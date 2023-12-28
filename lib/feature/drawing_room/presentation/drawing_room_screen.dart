@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:drawing_apps/core/theme/app_color.dart';
 import 'package:drawing_apps/feature/drawing_room/model/drawing_point.dart';
 import 'package:flutter/material.dart';
@@ -229,10 +231,11 @@ class DrawingPainter extends CustomPainter {
           final next = drawingPoint.offsets[i + 1];
           canvas.drawLine(current, next, paint);
         } else {
-          /// we do nothing
+          canvas.drawPoints(PointMode.points, drawingPoint.offsets, paint);
         }
       }
     }
+    canvas.restore();
   }
 
   @override
