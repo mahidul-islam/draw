@@ -5,12 +5,14 @@ class DrawingPoint {
   List<Offset> offsets;
   Color color;
   double width;
+  bool eraser = false;
 
   DrawingPoint({
     this.id = -1,
     this.offsets = const [],
     this.color = Colors.black,
     this.width = 2,
+    this.eraser = false,
   });
 
   DrawingPoint copyWith({List<Offset>? offsets}) {
@@ -19,6 +21,7 @@ class DrawingPoint {
       color: color,
       width: width,
       offsets: offsets ?? this.offsets,
+      eraser: eraser,
     );
   }
 }
