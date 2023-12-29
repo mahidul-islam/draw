@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:drawing_apps/core/theme/app_color.dart';
@@ -158,12 +159,12 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
             child: RotatedBox(
               quarterTurns: 3, // 270 degree
               child: Slider(
-                value: selectedWidth,
+                value: pow(selectedWidth, 1 / 1.5).toDouble(),
                 min: 1,
                 max: 20,
                 onChanged: (value) {
                   setState(() {
-                    selectedWidth = value;
+                    selectedWidth = pow(value, 1.5).toDouble();
                   });
                 },
               ),
