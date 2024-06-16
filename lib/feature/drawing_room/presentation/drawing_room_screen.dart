@@ -23,14 +23,14 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
     Colors.brown,
   ];
 
-  List<DrawingPoint> historyDrawingPoints = <DrawingPoint>[];
-  List<DrawingPoint> drawingPoints = <DrawingPoint>[];
+  List<SingleLineDrawingData> historyDrawingPoints = <SingleLineDrawingData>[];
+  List<SingleLineDrawingData> drawingPoints = <SingleLineDrawingData>[];
 
   Color? selectedColor = Colors.black;
   double selectedWidth = 20.0;
   bool isEraser = false;
 
-  DrawingPoint? currentDrawingPoint;
+  SingleLineDrawingData? currentDrawingPoint;
 
   late Path penguinePath;
 
@@ -50,7 +50,7 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
           GestureDetector(
             onPanStart: (details) {
               setState(() {
-                currentDrawingPoint = DrawingPoint(
+                currentDrawingPoint = SingleLineDrawingData(
                   id: DateTime.now().microsecondsSinceEpoch,
                   offsets: [
                     details.localPosition,
@@ -219,7 +219,7 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
 }
 
 class DrawingPainter extends CustomPainter {
-  final List<DrawingPoint> drawingPoints;
+  final List<SingleLineDrawingData> drawingPoints;
   final Path svgPath;
 
   DrawingPainter({required this.drawingPoints, required this.svgPath});

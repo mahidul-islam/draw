@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DrawingPoint {
+class SingleLineDrawingData {
   int id;
   List<Offset> offsets;
   Color color;
   double width;
   bool eraser = false;
 
-  DrawingPoint({
+  SingleLineDrawingData({
     this.id = -1,
     this.offsets = const [],
     this.color = Colors.black,
@@ -15,8 +15,8 @@ class DrawingPoint {
     this.eraser = false,
   });
 
-  DrawingPoint copyWith({List<Offset>? offsets}) {
-    return DrawingPoint(
+  SingleLineDrawingData copyWith({List<Offset>? offsets}) {
+    return SingleLineDrawingData(
       id: id,
       color: color,
       width: width,
